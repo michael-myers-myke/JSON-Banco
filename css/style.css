@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: rgb(214, 212, 73);
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+p{
+    margin: 40px;
+}
+#logo{
+    margin-top: 5px;
+    width: 170px;
+    height: 170px;
+    
+}
+.banderas {
+    width: 40px;
+    height: auto;
+    margin-right: 5px;
+    vertical-align: middle;
+}
