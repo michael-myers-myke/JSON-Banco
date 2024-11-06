@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banco Springfield</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <img src="img/LogoBan.png" alt="logo" id="logo">
+    <h1>Banco de Springfield</h1><br>
+    <h3>Springfield, IL</h3>
+    <p id="nombre"></p>
+    <p id="no_cuenta"></p>
+    <p id="monto_dolares">
+        <img src="img/banderaEU.png" alt="Bandera de EE.UU." class="banderas">
+        <span id="monto_dolares_text"></span>
+    </p>
+    <p id="monto_euros">
+        <img src="img/banderaEUR.png" alt="Bandera de la UE" class="banderas">
+        <span id="monto_euros_text"></span>
+    </p>
+    <h3>CBU:</h3>
+    <p id="fecha"></p>
+
+    <script>
+        fetch('banco.json')
+        .then(res => res.json())
+        .then((salida) => {
+            datosJson = salida;
+
+            let nombre = document.getElementById("nombre");
+            nombre.textContent = datosJson.nombre;
+            
+            let no = document.getElementById("no_cuenta");
+            no.textContent = "Nro cuenta: " + datosJson.no_cuenta;
+            
+            let montoDo = document.getElementById("monto_dolares_text");
+            montoDo.textContent = datosJson.monto_dolares + " USD";
+            
+            let montoEur = document.getElementById("monto_euros_text");
+            montoEur.textContent = datosJson.monto_euros + " EUR";
+            
+            let fechaCbu = document.getElementById("fecha");
+            fechaCbu.textContent = "Abierta: " + datosJson.cbu;
+        });
+    </script>
+</body>
+</html>
